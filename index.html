@@ -6,7 +6,6 @@
     <title>LIBFEST 25 - Sports Day</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -83,23 +82,17 @@
         </div>
     </section>
 
-<section class="memories-section">
-    <h2>Previous Memories</h2>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/cricket.png" alt="Cricket Memories"></div>
-            <div class="swiper-slide"><img src="images/badminton.png" alt="Badminton Memories"></div>
-            <div class="swiper-slide"><img src="images/chess.png" alt="Chess Memories"></div>
-            <div class="swiper-slide"><img src="images/tug.png" alt="Tug of War Memories"></div>
-            <div class="swiper-slide"><img src="images/bg.png" alt="Sports Background"></div>
+ <section class="memories-section">
+        <h2>Previous Memories</h2>
+        <div class="memories-grid">
+            <img src="images/cricket.png" alt="Cricket Memories">
+            <img src="images/badminton.png" alt="Badminton Memories">
+            <img src="images/chess.png" alt="Chess Memories">
+            <img src="images/tug.png" alt="Tug of War Memories">
+            <img src="images/bg.png" alt="Sports Background">
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-</section>
+    </section>
+
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
         <div class="contact-buttons">
@@ -121,19 +114,5 @@
     </footer>
 
     <script src="script.js"></script>
-     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
 </body>
 </html> 
