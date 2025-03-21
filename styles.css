@@ -278,11 +278,13 @@ h1, h2, h3 {
 
 .memories-grid img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: 400px;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    background-color: #f8f9fa;
+    padding: 1rem;
 }
 
 .memories-grid img:hover {
@@ -440,11 +442,12 @@ footer {
     }
 
     .memories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1rem;
     }
 
     .memories-grid img {
-        height: 250px;
+        height: 300px;
     }
 
     .slider-container {
