@@ -24,3 +24,13 @@ This is the official website for LIBFEST 25, a sports event organized by the Dep
 1. Clone the repository
 2. Open `index.html` in your browser
 3. All assets (images, styles, scripts) are included
+
+## Contact
+
+For any queries, contact:
+- WhatsApp: +91 91700 03039
+- Email: ishubham1312@bhu.ac.in
+
+## Organization
+
+Department of Library and Information Science, BHU 

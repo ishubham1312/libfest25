@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">LIBFEST 25</div>
+        <div class="logo">LIBFEST<span class="year">'25</span></div>
         <div class="nav-links">
             <a href="#home" class="active">Home</a>
             <a href="#games">Games</a>
             <a href="#schedule">Schedule</a>
             <a href="#memories">Memories</a>
+            <a href="#alumni">Alumni</a>
             <a href="#contact">Contact</a>
         </div>
         <div class="hamburger">
@@ -29,8 +30,12 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to LIBFEST 25</h1>
-            <p>Celebrating Sports Excellence</p>
+            <h1>
+                <span class="welcome">Welcome</span>
+                <span class="to">to</span>
+                <span class="libfest">LIBFEST<span class="year">'25</span></span>
+            </h1>
+            <p>The Annual Sports Event</p>
         </div>
     </section>
 
@@ -40,22 +45,22 @@
             <div class="sport-card">
                 <img src="images/cricket.png" alt="Cricket">
                 <h3>Cricket</h3>
-                <p>Experience the thrill of cricket matches</p>
+                <p>Show your batting and bowling skills in this exciting tournament.</p>
             </div>
             <div class="sport-card">
-                <img src="images/badminton.png" alt="Badminton">
+                <img src="images/Badminton.png" alt="Badminton">
                 <h3>Badminton</h3>
-                <p>Fast-paced badminton tournaments</p>
+                <p>Display your agility and precision in singles and doubles matches.</p>
             </div>
             <div class="sport-card">
                 <img src="images/chess.png" alt="Chess">
                 <h3>Chess</h3>
-                <p>Strategic chess competitions</p>
+                <p>Challenge your mind in strategic battles on the chessboard.</p>
             </div>
             <div class="sport-card">
                 <img src="images/tug.png" alt="Tug of War">
                 <h3>Tug of War</h3>
-                <p>Test your strength in team competition</p>
+                <p>Team up and test your strength in this classic competition.</p>
             </div>
         </div>
     </section>
@@ -86,10 +91,28 @@
         <h2>Previous Memories</h2>
         <div class="memories-grid">
             <img src="images/cricket.png" alt="Cricket Memories">
-            <img src="images/badminton.png" alt="Badminton Memories">
+            <img src="images/Badminton.png" alt="Badminton Memories">
             <img src="images/chess.png" alt="Chess Memories">
             <img src="images/tug.png" alt="Tug of War Memories">
             <img src="images/bg.png" alt="Sports Background">
+        </div>
+    </section>
+
+    <section class="past-memories-section">
+        <h2>For all Memories of LIBFEST<span class="year-24">'24</span></h2>
+        <div class="memory-buttons">
+            <a href="https://drive.google.com/drive/folders/1bVBBNbJwYnj_FHtRxbunWYsKSALF_uDp?usp=drive_link" target="_blank" class="memory-btn">Day 1</a>
+            <a href="https://drive.google.com/drive/folders/1SB9jxILhGT2AYBiFE8yWy0CJMMrriW8j?usp=drive_link" target="_blank" class="memory-btn">Day 2</a>
+            <a href="https://drive.google.com/drive/folders/1cq5TQ_JuPZ_CpemWOjMIw6-R9_g-EMT7?usp=drive_link" target="_blank" class="memory-btn">Day 3</a>
+            <a href="https://drive.google.com/drive/folders/1Phbd44j8XG0YdApTSUWBxNfVIRyJK0TP?usp=drive_link" target="_blank" class="memory-btn">Day 4</a>
+            <a href="https://drive.google.com/drive/folders/1AwMrqy_aGObfaZ7e-gGXCvGVmhfeyczB" target="_blank" class="memory-btn">Extras</a>
+        </div>
+    </section>
+
+    <section id="alumni" class="alumni-section">
+        <div class="alumni-content">
+            <h2>Get to know our Alumni Supporters</h2>
+            <a href="alumni.html" class="alumni-btn">Click Here</a>
         </div>
     </section>
 
@@ -115,4 +138,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
