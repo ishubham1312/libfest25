@@ -985,3 +985,38 @@ footer {
     font-weight: 500;
     letter-spacing: 0.5px;
 }
+
+/* Add at the top of the file */
+img {
+    max-width: 100%;
+    height: auto;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Optimize image loading */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Add content-visibility for better performance */
+.section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
