@@ -1,11 +1,11 @@
 /* Reset and Base Styles */
 :root {
-    --primary-color: #2A2A72;
+    --primary-color: #1a237e;
     --secondary-color: #009FFD;
-    --accent-color: #FFA400;
+    --accent-color: #ff4081;
     --text-color: #2C3E50;
-    --light-bg: #F8F9FA;
-    --white: #FFFFFF;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
     --transition: all 0.3s ease;
 }
 
@@ -20,6 +20,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -34,7 +35,7 @@ h1, h2, h3 {
     top: 0;
     width: 100%;
     background: var(--primary-color);
-    padding: 1.2rem 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,34 +53,36 @@ h1, h2, h3 {
 
 .nav-links {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 2rem;
 }
 
 .nav-links a {
     color: var(--white);
     text-decoration: none;
-    padding: 0.8rem 1rem;
-    font-weight: 500;
-    transition: var(--transition);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    padding: 0.5rem 1rem;
     position: relative;
+    background: transparent;
+}
+
+.nav-links a.active {
+    background: transparent;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
+    bottom: -5px;
+    left: 0;
     width: 0;
     height: 2px;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--accent-color);
+    background: #FFA400;
     transition: var(--transition);
 }
 
-.nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 50px;
+    width: 100%;
 }
 
 .hamburger {
@@ -112,129 +115,97 @@ h1, h2, h3 {
 }
 
 /* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                linear-gradient(rgba(42, 42, 114, 0.7), rgba(0, 159, 253, 0.7)),
-                url('images/download.png');
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/bg.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
+    padding: 2rem;
 }
 
-@keyframes slideInWelcome {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInTo {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLibfest {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-content {
+    max-width: 800px;
+    margin-top: 4rem;
+    padding: 0 1rem;
 }
 
 .hero-content h1 {
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    line-height: 1.2;
+    margin-bottom: 2rem;
+    line-height: 1.3;
 }
 
-.hero-content h1 span.welcome {
+.hero-content h1 .welcome-text {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     display: block;
-    animation: slideInWelcome 1s ease-out forwards;
+    margin-bottom: 1rem;
 }
 
-.hero-content h1 span.to {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    display: block;
-    opacity: 0;
-    animation: slideInTo 1s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.hero-content h1 span.libfest {
+.hero-content h1 .libfest-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4.5rem;
+    font-size: clamp(4.5rem, 10vw, 6.5rem);
     font-weight: 900;
     letter-spacing: 2px;
-    display: block;
     text-transform: uppercase;
-    opacity: 0;
-    animation: slideInLibfest 1s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.hero-content h1 span.year {
-    display: inline;
-    color: var(--accent-color);
+    display: block;
 }
 
 .hero-content p {
-    font-size: 1.6rem;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-    animation-delay: 1.5s;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Games Section */
-.games-section {
-    padding: 8rem 2rem;
+/* Section Separator */
+.section-separator {
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin: 2rem 0;
+    opacity: 0.3;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sports Section */
+.sports-section {
+    padding: 6rem 1rem;
     background: var(--light-bg);
+    text-align: center;
 }
 
-.games-section h2 {
+.sports-section h2 {
     text-align: center;
-    margin-bottom: 4rem;
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
     color: var(--primary-color);
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.sports-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 1rem auto 0;
+    border-radius: 2px;
 }
 
 .sports-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -242,41 +213,36 @@ h1, h2, h3 {
 
 .sport-card {
     background: var(--white);
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: var(--transition);
-    height: 100%;
+    text-align: center;
 }
 
 .sport-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
 }
 
 .sport-card img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16/9;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    background-color: #f8f9fa;
-    padding: 0;
 }
 
 .sport-card h3 {
-    padding: 1.5rem 1rem 0.5rem;
-    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 1rem auto;
     color: var(--primary-color);
-    font-size: 1.4rem;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .sport-card p {
-    padding: 0 1.5rem 1.5rem;
+    padding: 0 1rem 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     text-align: center;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    opacity: 0.8;
+    margin: 0 auto;
 }
 
 /* Schedule Section */
@@ -327,14 +293,15 @@ h1, h2, h3 {
 
 /* Memories Section */
 .memories-section {
-    padding: 4rem 2rem;
-    background-color: #f8f9fa;
+    padding: 4rem 1rem;
+    background: var(--white);
 }
 
 .memories-section h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
+    color: var(--primary-color);
 }
 
 .memories-grid {
@@ -343,19 +310,52 @@ h1, h2, h3 {
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 .memories-grid img {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 1;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
 }
 
 .memories-grid img:hover {
     transform: scale(1.05);
+}
+
+/* Video Section */
+.video-section {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* Past Memories Section */
@@ -454,6 +454,387 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
+/* Faculty Section */
+.faculty-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: var(--white);
+}
+
+.faculty-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faculty-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.faculty-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-btn:hover,
+.faculty-btn:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Alumni List Section */
+.alumni-list-section {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 30%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    width: 70%;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.batch {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.designation {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+}
+
+.institution {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        background: var(--primary-color);
+        padding: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hero-section {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        margin-top: 5rem;
+    }
+
+    .hero-content h1 .welcome-text {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+
+    .hero-content h1 .libfest-text {
+        font-size: clamp(2.8rem, 8vw, 4rem);
+        letter-spacing: 1px;
+    }
+
+    .sports-section {
+        padding: 4rem 1rem;
+    }
+
+    .sports-section h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    .sports-section h2::after {
+        width: 60px;
+        margin: 0.8rem auto 0;
+    }
+
+    .section-separator {
+        margin: 1.5rem 0;
+        max-width: 90%;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .sport-card {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .sport-card h3,
+    .sport-card p {
+        text-align: center;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .games-section h2,
+    .schedule-section h2,
+    .contact-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .slider-container {
+        height: 300px;
+    }
+
+    .slider-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+        background-color: #f8f9fa;
+        object-fit: contain;
+        padding: 10px;
+    }
+
+    .card-content {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .batch {
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+}
+
+/* Portrait Mobile Optimization (9:16) */
+@media (max-width: 480px) and (aspect-ratio: 9/16) {
+    .hero-section {
+        min-height: 100svh;
+        padding: 1rem;
+    }
+
+    .hero-content {
+        margin-top: 4rem;
+    }
+
+    .hero-content h1 .welcome-text {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content h1 .libfest-text {
+        font-size: clamp(3rem, 8vw, 3.5rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        padding: 0 1rem;
+    }
+
+    .sports-section,
+    .memories-section,
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+
+    .sports-grid {
+        gap: 1.5rem;
+    }
+
+    .sport-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .sport-card img {
+        aspect-ratio: 3/2;
+    }
+
+    .memories-grid {
+        gap: 1rem;
+    }
+
+    .memories-grid img {
+        aspect-ratio: 3/4;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .section-separator {
+        margin: 1rem 0;
+        max-width: 95%;
+    }
+}
+
+/* Animation for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.mySlides.fade-manual {
+    -webkit-animation-name: fade-manual;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fade-manual;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@-webkit-keyframes fade-manual {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fade-manual {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
 /* Alumni Page Specific Styles */
 .alumni-hero {
     height: 50vh;
@@ -499,60 +880,48 @@ h1, h2, h3 {
 
 /* Contact Section */
 .contact-section {
-    padding: 8rem 2rem;
+    padding: 4rem 1rem;
     background: var(--light-bg);
 }
 
 .contact-section h2 {
     text-align: center;
-    margin-bottom: 4rem;
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
     color: var(--primary-color);
 }
 
-.contact-container {
+.contact-form {
     max-width: 600px;
     margin: 0 auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 1rem 1.5rem;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: var(--transition);
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(0, 159, 253, 0.1);
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-.contact-form button {
-    padding: 1rem 2rem;
-    background: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.contact-form button:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
 }
 
 .contact-buttons {
@@ -594,12 +963,12 @@ h1, h2, h3 {
 }
 
 .year {
-    color: var(--accent-color);
+    color: #FFA400;
     display: inline;
 }
 
 .logo .year {
-    color: var(--accent-color);
+    color: #FFA400;
     display: inline;
 }
 
@@ -615,112 +984,4 @@ footer {
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 2rem;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--primary-color);
-        padding: 1rem 0;
-        flex-direction: column;
-        gap: 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        width: 100%;
-        text-align: center;
-        padding: 1rem 2rem;
-    }
-
-    .hero {
-        padding-top: 100px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1.3rem;
-    }
-
-    .games-section h2,
-    .schedule-section h2,
-    .contact-section h2 {
-        font-size: 2.5rem;
-    }
-
-    .sports-grid,
-    .schedule-container,
-    .memories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .memories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .memories-grid img {
-        height: 250px;
-    }
-
-    .slider-container {
-        height: 300px;
-    }
-
-    .slider-button {
-        width: 35px;
-        height: 35px;
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .memories-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .alumni-hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .alumni-hero-content h1 .highlight {
-        font-size: 2.5rem;
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .alumni-hero-content h1 span:not(.highlight) {
-        font-size: 2rem;
-    }
-}
-
-/* Animation for smooth scrolling */
-html {
-    scroll-behavior: smooth;
 }

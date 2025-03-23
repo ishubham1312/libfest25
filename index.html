@@ -9,16 +9,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides.fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .mySlides.fade-manual {
+            -webkit-animation-name: fade-manual;
+            -webkit-animation-duration: 0.5s;
+            animation-name: fade-manual;
+            animation-duration: 0.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @-webkit-keyframes fade-manual {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        @keyframes fade-manual {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">LIBFEST<span class="year">'25</span></div>
         <div class="nav-links">
             <a href="#home" class="active">Home</a>
-            <a href="#games">Games</a>
             <a href="#schedule">Schedule</a>
+            <a href="#games">Games</a>
             <a href="#memories">Memories</a>
             <a href="#alumni">Alumni</a>
+            <a href="#faculty">Faculty</a>
             <a href="#contact">Contact</a>
         </div>
         <div class="hamburger">
@@ -28,18 +110,45 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <section id="home" class="hero-section">
         <div class="hero-content">
             <h1>
-                <span class="welcome">Welcome</span>
-                <span class="to">to</span>
-                <span class="libfest">LIBFEST<span class="year">'25</span></span>
+                <span class="welcome-text">Welcome <br> to </span>
+                <span class="libfest-text">LIBFEST <span class="year">'25</span></span>
             </h1>
-            <p>The Annual Sports Event</p>
+            <p>Join us for an exciting celebration of sports and camaraderie at the Department of Library and Information Science, BHU. Experience the thrill of competition and create lasting memories.</p>
         </div>
     </section>
 
-    <section id="games" class="games-section">
+    <section id="schedule" class="schedule-section">
+        <h2>Event Schedule</h2>
+        <div class="schedule-container">
+            <div class="schedule-item">
+                <h3>Day 1</h3>
+                <p>Cricket Matches</p>
+            </div>
+            <div class="schedule-item">
+                <h3>Day 2</h3>
+                <p>Badminton Tournaments</p>
+            </div>
+            <div class="schedule-item">
+                <h3>Day 3</h3>
+                <p>Chess Championships</p>
+            </div>
+            <div class="schedule-item">
+                <h3>Day 4</h3>
+                <p>Tug of War Competition</p>
+            </div>
+            <div class="schedule-item">
+                <h3>Prize Distribution</h3>
+                <p>Date</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="games" class="sports-section">
         <h2>Featured Sports</h2>
         <div class="sports-grid">
             <div class="sport-card">
@@ -65,40 +174,86 @@
         </div>
     </section>
 
-    <section id="schedule" class="schedule-section">
-        <h2>Event Schedule</h2>
-        <div class="schedule-container">
-            <div class="schedule-item">
-                <h3>Day 1</h3>
-                <p>Cricket Matches</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Day 2</h3>
-                <p>Badminton Tournaments</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Day 3</h3>
-                <p>Chess Championships</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Day 4</h3>
-                <p>Tug of War Competition</p>
-            </div>
-        </div>
-    </section>
+    <div class="section-separator"></div>
 
     <section id="memories" class="memories-section">
         <h2>Previous Memories</h2>
-        <div class="memories-grid">
-            <img src="images/cricket.png" alt="Cricket Memories">
-            <img src="images/Badminton.png" alt="Badminton Memories">
-            <img src="images/chess.png" alt="Chess Memories">
-            <img src="images/tug.png" alt="Tug of War Memories">
-            <img src="images/bg.png" alt="Sports Background">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_7486-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_8718-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_7562-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9236-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9333-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_E1694-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9259-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_8753-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1405-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1689-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1345-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1710-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9236-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9259-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9259-min.JPG" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
+            <span class="dot" onclick="currentSlide(11)"></span>
+            <span class="dot" onclick="currentSlide(12)"></span>
+            <span class="dot" onclick="currentSlide(13)"></span>
+            <span class="dot" onclick="currentSlide(14)"></span>
+            <span class="dot" onclick="currentSlide(15)"></span>
         </div>
     </section>
 
-    <section class="past-memories-section">
+    <div class="section-separator"></div>
+
+    <section id="past-memories" class="past-memories-section">
         <h2>For all Memories of LIBFEST<span class="year-24">'24</span></h2>
         <div class="memory-buttons">
             <a href="https://drive.google.com/drive/folders/1bVBBNbJwYnj_FHtRxbunWYsKSALF_uDp?usp=drive_link" target="_blank" class="memory-btn">Day 1</a>
@@ -109,6 +264,19 @@
         </div>
     </section>
 
+    <section id="video" class="video-section">
+        <h2>Event Highlights</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Wpz38ayFOVM" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
     <section id="alumni" class="alumni-section">
         <div class="alumni-content">
             <h2>Get to know our Alumni Supporters</h2>
@@ -116,16 +284,27 @@
         </div>
     </section>
 
+    <div class="section-separator"></div>
+
+    <section id="faculty" class="faculty-section">
+        <div class="faculty-content">
+            <h2>Our Faculty</h2>
+            <a href="https://www.bhu.ac.in/Site/FacultyList/53_100_613_Department-of-Library-And-Information-Science-Faculty" class="faculty-btn">Click Here</a>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
         <div class="contact-buttons">
-            <a href="https://wa.me/919170003039" target="_blank" class="contact-button whatsapp-button">
+            <a href="https://wa.me/919170003039" class="contact-button whatsapp-button">
                 <i class="fab fa-whatsapp"></i>
-                WhatsApp Us
+                WhatsApp
             </a>
             <a href="mailto:ishubham1312@bhu.ac.in" class="contact-button email-button">
                 <i class="far fa-envelope"></i>
-                Email Us
+                Email
             </a>
         </div>
     </section>
@@ -136,6 +315,69 @@
         </div>
     </footer>
 
+    <script>
+        var slideIndex = 1;
+        var autoSlideInterval;
+        var isManual = false;
+
+        showSlides(slideIndex);
+
+        // Start auto-sliding
+        autoSlideInterval = setInterval(function() {
+            plusSlides(1);
+        }, 3000);
+
+        function plusSlides(n) {
+            // If manual navigation, stop auto-sliding
+            if (n !== 0) {
+                isManual = true;
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(function() {
+                    plusSlides(1);
+                }, 3000);
+            }
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            isManual = true;
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(function() {
+                plusSlides(1);
+            }, 3000);
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Remove active class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            // Show current slide with appropriate transition
+            slides[slideIndex-1].style.display = "block";
+            if (isManual) {
+                slides[slideIndex-1].classList.remove('fade');
+                slides[slideIndex-1].classList.add('fade-manual');
+            } else {
+                slides[slideIndex-1].classList.remove('fade-manual');
+                slides[slideIndex-1].classList.add('fade');
+            }
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
