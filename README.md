@@ -33,4 +33,4 @@ For any queries, contact:
 
 ## Organization
 
-Department of Library and Information Science, BHU 
+Department of Library and Information Science, BHU
