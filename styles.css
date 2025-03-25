@@ -292,28 +292,34 @@ h1, h2, h3 {
 
 .schedule-item {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.schedule-item p {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.schedule-item h3 {
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+}
+
+.schedule-item p:nth-child(3) {
+    color: var(--text-color);
+}
+
+.schedule-item p:last-child {
+    color: var(--text-color);
+    font-weight: 500;
 }
 
 .schedule-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.schedule-item h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.schedule-item p {
-    color: var(--text-color);
-    font-size: 1.1rem;
 }
 
 .schedule-section {
