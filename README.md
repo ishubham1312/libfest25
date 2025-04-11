@@ -28,7 +28,6 @@ This is the official website for LIBFEST 25, a sports event organized by the Dep
 ## Contact
 
 For any queries, contact:
-- WhatsApp: +91 91700 03039
 - Email: ishubham1312@bhu.ac.in
 
 ## Organization
