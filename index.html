@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBFEST 25 - Sports Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides, .mySlides25 {
+            display: none;
+        }
+
+        .mySlides.fade, .mySlides25.fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .mySlides.fade-manual, .mySlides25.fade-manual {
+            -webkit-animation-name: fade-manual;
+            -webkit-animation-duration: 0.5s;
+            animation-name: fade-manual;
+            animation-duration: 0.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @-webkit-keyframes fade-manual {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        @keyframes fade-manual {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #1a237e;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .schedule-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .schedule-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .schedule-item a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .schedule-item a:hover {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">LIBFEST<span class="year">'25</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#games">Games</a>
+            <a href="#memories">Memories</a>
+            <a href="#alumni">Alumni</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>
+                <span class="welcome-text">Welcome <br> to </span>
+                <span class="libfest-text">LIBFEST <span class="year">'25</span></span>
+            </h1>
+            <p>Get ready to experience the excitement of LibFest '25! Join us for a vibrant celebration of sports, friendship, and unforgettable moments at the Department of Library and Information Science, BHU. Let the games begin and the memories last forever!<p>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <h2>Event Schedule</h2>
+        <div class="schedule-container">
+            <div class="schedule-item">
+                <a href="day1.html">
+                    <h3>Day 1</h3>
+                    <p>March 26, 2025</p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="day2.html">
+                    <h3>Day 2</h3>
+                    <p>March 27, 2025</p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="day3.html">
+                    <h3>Day 3</h3>
+                    <p>March 28, 2025</p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="day4.html">
+                    <h3>Day 4</h3>
+                    <p>March 29, 2025</p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="prizes.html">
+                    <h3>Prize Distribution</h3>
+                    <p>April 3, 2025</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="memories25" class="memories-section">
+        <h2>LIBFEST'25 Memories</h2>
+        <div class="slideshow-container">
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0011.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0045.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0048.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0064.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0094.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0121.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0134.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0156.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0169.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0219.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0227.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0263.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0266.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0273.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0362.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0372.JPG" style="width:100%">
+            </div>
+            <div class="mySlides25 fade">
+                <img src="images/memory 25/DSC_0668.JPG" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides25(-1)">❮</a>
+            <a class="next" onclick="plusSlides25(1)">❯</a>
+
+            <!-- Dots -->
+            <div style="text-align:center; margin-top: 20px;">
+                <span class="dot" onclick="currentSlide25(1)"></span>
+                <span class="dot" onclick="currentSlide25(2)"></span>
+                <span class="dot" onclick="currentSlide25(3)"></span>
+                <span class="dot" onclick="currentSlide25(4)"></span>
+                <span class="dot" onclick="currentSlide25(5)"></span>
+                <span class="dot" onclick="currentSlide25(6)"></span>
+                <span class="dot" onclick="currentSlide25(7)"></span>
+                <span class="dot" onclick="currentSlide25(8)"></span>
+                <span class="dot" onclick="currentSlide25(9)"></span>
+                <span class="dot" onclick="currentSlide25(10)"></span>
+                <span class="dot" onclick="currentSlide25(11)"></span>
+                <span class="dot" onclick="currentSlide25(12)"></span>
+                <span class="dot" onclick="currentSlide25(13)"></span>
+                <span class="dot" onclick="currentSlide25(14)"></span>
+                <span class="dot" onclick="currentSlide25(15)"></span>
+                <span class="dot" onclick="currentSlide25(16)"></span>
+                <span class="dot" onclick="currentSlide25(17)"></span>
+            </div>
+        </div>
+    </section>
+    <section id="past-memories" class="past-memories-section">
+        <h2>See More of LIBFEST<span class="year-24">'25</span></h2>
+        <div class="memory-buttons">
+            <a href="https://drive.google.com/drive/folders/1Amg7kmqdOeWLHsbuWoEUbmPOYmb4cwCu" target="_blank" class="memory-btn">Click Here</a>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+    <section id="games" class="sports-section">
+        <h2>Featured Sports</h2>
+        <div class="sports-grid">
+            <div class="sport-card">
+                <a href="cricket.html">
+                    <img src="images/cricket.png" alt="Cricket">
+                    <h3>Cricket</h3>
+                    <p>Show your batting and bowling skills in this exciting tournament.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="badminton.html">
+                    <img src="images/badminton.png" alt="Badminton">
+                    <h3>Badminton</h3>
+                    <p>Display your agility and precision in singles and doubles matches.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="chess.html">
+                    <img src="images/chess.png" alt="Chess">
+                    <h3>Chess</h3>
+                    <p>Challenge your mind in strategic battles on the chessboard.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="tugofwar.html">
+                    <img src="images/tug.png" alt="Tug of War">
+                    <h3>Tug of War</h3>
+                    <p>Team up and test your strength in this classic competition.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="volleyball.html">
+                    <img src="images/volley.jpg" alt="Volleyball">
+                    <h3>Volleyball</h3>
+                    <p>Show your spiking and blocking skills in this dynamic team sport.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="treasurehunt.html">
+                    <img src="images/tresure.jpg" alt="Treasure Hunt">
+                    <h3>Treasure Hunt</h3>
+                    <p>Embark on an exciting adventure to find hidden treasures across campus.</p>
+                </a>
+            </div>
+            <div class="sport-card">
+                <a href="quiz.html">
+                    <img src="images/Quiz.png" alt="Quiz">
+                    <h3>Quiz</h3>
+                    <p>Test your knowledge and compete in an engaging quiz competition.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="memories" class="memories-section">
+        <h2>Previous Memories</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_7486-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_7562-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_8718-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_8753-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9236-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/DSC_9259-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1308-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1345-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1405-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1433-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1689-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1710-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1815-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_E1694-min.JPG" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/memory/IMG_1436-min.JPG" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div style="text-align:center; margin-top: 20px;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+                <span class="dot" onclick="currentSlide(14)"></span>
+                <span class="dot" onclick="currentSlide(15)"></span>
+            </div>
+        </div>
+    </section> 
+
+    <div class="section-separator"></div>
+    
+
+    <section id="past-memories" class="past-memories-section">
+        <h2>For all Memories of LIBFEST<span class="year-24">'24</span></h2>
+        <div class="memory-buttons">
+            <a href="https://drive.google.com/drive/folders/1bVBBNbJwYnj_FHtRxbunWYsKSALF_uDp?usp=drive_link" target="_blank" class="memory-btn">Day 1</a>
+            <a href="https://drive.google.com/drive/folders/1SB9jxILhGT2AYBiFE8yWy0CJMMrriW8j?usp=drive_link" target="_blank" class="memory-btn">Day 2</a>
+            <a href="https://drive.google.com/drive/folders/1cq5TQ_JuPZ_CpemWOjMIw6-R9_g-EMT7?usp=drive_link" target="_blank" class="memory-btn">Day 3</a>
+            <a href="https://drive.google.com/drive/folders/1Phbd44j8XG0YdApTSUWBxNfVIRyJK0TP?usp=drive_link" target="_blank" class="memory-btn">Day 4</a>
+            <a href="https://drive.google.com/drive/folders/1AwMrqy_aGObfaZ7e-gGXCvGVmhfeyczB" target="_blank" class="memory-btn">Extras</a>
+            <a href="https://drive.google.com/drive/folders/1k-hI0CroclARxzGs_KoZt_9OokYNFytM?usp=sharing" target="_blank" class="memory-btn">Libfest'18</a>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <h2>Event Highlights</h2>
+        <div class="youtube-embed">
+            <iframe src="https://www.youtube.com/embed/Wpz38ayFOVM" 
+                    title="LIBFEST 25 Memories" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="alumni" class="alumni-section">
+        <div class="alumni-content">
+            <h2>Meet the Organisers</h2>
+            <a href="org.html" class="alumni-btn">Click Here</a>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="alumni" class="alumni-section">
+        <div class="alumni-content">
+            <h2>Get to know our Alumni Supporters</h2>
+            <a href="alumni.html" class="alumni-btn">Click Here</a>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-buttons">
+            <a href="https://wa.me/919807849501" class="contact-button whatsapp-button">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+            <a href="mailto:dlislibfest@gmail.com?subject=LIBFEST%2025%20Enquiry" class="contact-button email-button">
+                <i class="far fa-envelope"></i>
+                Email
+            </a>
+            <a href="https://www.instagram.com/dlis_bhu_fest/" class="contact-button instagram-button" target="_blank">
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p><center> Organised by:</center></p> <br>Department of Library and Information Science, BHU</p>
+        </div>
+    </footer>
+
+    <script>
+        // Previous Memories slider
+        var slideIndex = 1;
+        var autoSlideInterval;
+        var isManual = false;
+
+        showSlides(slideIndex);
+
+        // Start auto-sliding
+        autoSlideInterval = setInterval(function() {
+            plusSlides(1);
+        }, 3000);
+
+        function plusSlides(n) {
+            if (n !== 0) {
+                isManual = true;
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(function() {
+                    plusSlides(1);
+                }, 3000);
+            }
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            isManual = true;
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(function() {
+                plusSlides(1);
+            }, 3000);
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            if (isManual) {
+                slides[slideIndex-1].classList.remove('fade');
+                slides[slideIndex-1].classList.add('fade-manual');
+            } else {
+                slides[slideIndex-1].classList.remove('fade-manual');
+                slides[slideIndex-1].classList.add('fade');
+            }
+            dots[slideIndex-1].className += " active";
+        }
+
+        // LIBFEST'25 Memories slider
+        var slideIndex25 = 1;
+        var autoSlideInterval25;
+        var isManual25 = false;
+
+        showSlides25(slideIndex25);
+
+        // Start auto-sliding
+        autoSlideInterval25 = setInterval(function() {
+            plusSlides25(1);
+        }, 3000);
+
+        function plusSlides25(n) {
+            if (n !== 0) {
+                isManual25 = true;
+                clearInterval(autoSlideInterval25);
+                autoSlideInterval25 = setInterval(function() {
+                    plusSlides25(1);
+                }, 3000);
+            }
+            showSlides25(slideIndex25 += n);
+        }
+
+        function currentSlide25(n) {
+            isManual25 = true;
+            clearInterval(autoSlideInterval25);
+            autoSlideInterval25 = setInterval(function() {
+                plusSlides25(1);
+            }, 3000);
+            showSlides25(slideIndex25 = n);
+        }
+
+        function showSlides25(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides25");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex25 = 1}
+            if (n < 1) {slideIndex25 = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex25-1].style.display = "block";
+            if (isManual25) {
+                slides[slideIndex25-1].classList.remove('fade');
+                slides[slideIndex25-1].classList.add('fade-manual');
+            } else {
+                slides[slideIndex25-1].classList.remove('fade-manual');
+                slides[slideIndex25-1].classList.add('fade');
+            }
+            dots[slideIndex25-1].className += " active";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

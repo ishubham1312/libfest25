@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisers - LIBFEST 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&family=Sora:wght@800&display=swap" rel="stylesheet">
+    <style>
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #1a237e;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .alumni-hero{
+            background: url('images/img3.jpeg') center/cover;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .organiser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .organiser-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            min-height: 500px;
+        }
+
+        .organiser-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .organiser-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+            transition: all 0.3s ease;
+        }
+
+        .organiser-card h3:hover {
+            color: #2b2b2b;
+            transform: translateY(-2px);
+        }
+
+        .organiser-card .position {
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            margin: 10px 0;
+            font-size: 1rem;
+            width: 100%;
+            padding: 0 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .organiser-card .position strong {
+            font-weight: 600;
+            color: #00a9eb;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .organiser-card .position em {
+            font-style: italic;
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0 0;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            width: 100%;
+        }
+
+        .social-links a {
+            color: #666;
+            font-size: 1.5rem;
+            padding: 12px;
+            border-radius: 50%;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: transparent;
+        }
+
+        .social-links a:hover {
+            color: #1a237e;
+        }
+
+        .click-section {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #1F1E2C;
+            margin-top: 50px;
+            color: white;
+            width: 100%;
+        }
+
+        .click-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .click-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #569F50;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid #569F50;
+        }
+
+        .click-button:hover {
+            background-color: transparent;
+            color: #569F50;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(86, 159, 80, 0.3);
+        }
+
+        .alumni-hero-content h1 .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            .organiser-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                padding: 10px;
+            }
+
+            .click-section {
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">LIBFEST<span class="year">'25</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#schedule">Schedule</a>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#memories">Memories</a>
+            <a href="index.html#alumni">Alumni</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="alumni-hero">
+        <div class="alumni-hero-content">
+            <h1><span>Meet the</span> <span class="highlight"> <b>Organisers</b></span></h1>
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="organiser-grid">
+            <div class="organiser-card">
+                <img src="images/organisers/nikhil.jpg" alt="Nikhil Anand Srivastava">
+                <h3>Nikhil Anand Srivastava</h3>
+                <p class="position"><strong>Event Head</strong> <br> "The Boss of the Show – everyone’s go-to person, leader of the squad." <br><em>(He was the Dumbledore of this whole operation.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nikhil-anand-srivastava-ab043b15a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/its_ur_boy_niksssss/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/satya.png" alt="Satya Prakash Singh">
+                <h3>Satya Prakash Singh</h3>
+                <p class="position"><strong>Supreme Squad Commander</strong> <br> "All roads lead here – the team's guiding force." <br><em>(The silent strength holding the team together like magic glue.)</em></p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/singh_aashish21/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="organiser-card">
+                <img src="images/organisers/shreya.jpg" alt="Dr. Shreya Banerjee">
+                <h3>Dr. Shreya Banerjee</h3>
+                <p class="position"><strong>Strategist & Game Architect</strong> <br> "The Hidden Genius – crafted the thrill and held the team together." <br><em>(From behind-the-scenes support to designing the treasure hunt adventure, they were the silent force that made it all unforgettable.)</em></p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/ashish.jpg" alt="Ashish Parihar">
+                <h3>Ashish Parihar</h3>
+                <p class="position"><strong>Event Manager & Host</strong> <br> "The Mic Magician and Master Planner – ran the show and the schedule!" <br><em>(He was basically the voice of the event and the brain behind it.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ashish-parihar08/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ashishparihar08/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/sumit.jpg" alt="Kumar Sumit">
+                <h3>Kumar Sumit</h3>
+                <p class="position"><strong>Operations & Permissions Coordinator</strong> <br> "The Gatekeeper – unlocking permissions and helping everyone hustle." <br><em>(No permission denied when Sumit's on the job.)</em></p>
+                <div class="social-links">
+                    <a href="https://in.linkedin.com/in/kumar-sumit-b01b69220" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/su._.mit_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/dev.jpg" alt="Dev Jaiswal">
+                <h3>Dev Jaiswal</h3>
+                <p class="position"><strong>Event Incharge & Logistics Head</strong> <br> "The Backbone of the Event – made sure everything was in place and everyone was fed." <br><em>(From setups to snacks, Dev handled it all with calm and control.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dev-jaiswal-571675257?trk=contact-info" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/dev_a_manush/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/shubham.jpg" alt="Shubham Yadav">
+                <h3>Shubham Yadav</h3>
+                <p class="position"><strong>Media & Web Creator</strong> <br> "The Memory Keeper – captured moments and built a digital home for it." <br><em>(From behind the lens to behind the scenes—digitally immortalizing the event.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ishubham1312/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ishubham1312/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/ishubham1312" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/sarita.jpg" alt="Sarita Singh">
+                <h3>Sarita Singh</h3>
+                <p class="position"><strong>Creative Organizer & Referee</strong> <br> "The Artful Umpire – blended creativity with shuttle smashes." <br><em>(Crafty with the decor, sharp with the shuttle.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sarita-singh-861b09217/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/saru_07_01/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/riya.jpg" alt="Riya Singh">
+                <h3>Riya Singh</h3>
+                <p class="position"><strong>Creative Head</strong> <br> "Design Diva – made the event look as awesome as it felt." <br><em>(Her designs brought the whole event vibe to life.)</em></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/riya-singh-2988b0241/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/singh_riya40/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/satendra.jpg" alt="Satyendra Kumar">
+                <h3>Satyendra Kumar</h3>
+                <p class="position"><strong>Public Relations & Media Coordinator</strong> <br> "The Hype Builder – got the spotlight and headlines shining." <br><em>(The guy who made sure people heard about the event before, during, and after.)</em></p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/hodophile_sattu?igsh=NzBuYW1zM3U2djdt" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/himanshu.jpg" alt="Himanshu Vishwakarma">
+                <h3>Himanshu Vishwakarma</h3>
+                <p class="position"><strong>Event Photographer</strong> <br> "The Snap Star – froze every memory, one perfect frame at a time." <br><em>(He didn't just take photos—he caught feelings in frames.)</em></p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/hiiimaaanshuuu?igsh=MTZqNDNqYjh5Z2dieg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="organiser-card">
+                <img src="images/organisers/karan.jpg" alt="Karan">
+                <h3>Karan Kant</h3>
+                <p class="position"><strong>Task Ninja</strong> <br> "The Go-To Hero – did everything, did it well, and never missed a beat." <br><em>(Reliable, ready, and rapid—Karan was everywhere doing everything.)</em></p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/karan_kant.54?igsh=MWtpMnh0Y2NoeWhi" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+    <section>
+        <div class="click-section">
+            <h2>Meet the Developer</h2>
+            <a href="under-construction.html" class="click-button">Click Here</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p><center>Organised by:</center></p>
+            <p>Department of Library and Information Science, BHU</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

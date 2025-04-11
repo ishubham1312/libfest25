@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket - LIBFEST 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .player-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        .player-table th, .player-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .player-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .player-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .player-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .match-item .winner {
+            color: #4CAF50;
+            font-weight: 700;
+            padding: 5px 10px;
+            margin: 10px 0;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .match-item .winner::after {
+            content: " (Winner)";
+            color: #4CAF50;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">LIBFEST<span class="year">'25</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#schedule">Schedule</a>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#memories">Memories</a>
+            <a href="index.html#alumni">Alumni</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="sport-hero">
+        <div class="sport-hero-content">
+            <h1>Cricket Tournament</h1>
+            <p>Show your batting and bowling skills in this exciting tournament</p>
+        </div>
+    </section>
+
+    <section class="sport-details">
+        <div class="container">
+            <div class="sport-info">
+                <h2>Event Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <h3>Date</h3>
+                        <p>March 26 & 27</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Time</h3>
+                        <p>9:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Venue</h3>
+                        <p>Brocha Ground</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Team Size</h3>
+                        <p>11 players per team</p>
+                    </div>
+                </div>
+
+                <div class="schedule-section">
+                    <h2>Match Schedule</h2>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <h3>Match I</h3>
+                            <p>MLIS 2nd Year <br>
+                                vs <br>
+                                Scholars</p>
+                            <p class="winner"> Winner : MLIS 2nd Year </p>
+                            <p>Time: 8am-11am</p>
+                            <p>Date: 26 March 2025</p>
+                        </div>
+                        <div class="schedule-item">
+                            <h3>Match II</h3>
+                            <p>MLIS 1 Year <br> vs <br> Scholars</p>
+                            <p class="winner"> Winner : MLIS 1st Year </p>
+                            <p>Time: 12pm-3pm</p>
+                            <p>Date: 26 March 2025</p>
+                        </div>
+                        <div class="schedule-item">
+                            <h3>Match III</h3>
+                            <p>MLIS 1st Year <br> vs <br> MLIS 2nd Year</p>
+                            <p class="winner"> Winner : MLIS 2nd Year </p>
+                            <p>Time: 3pm-5pm</p>
+                            <p>Date: 26 March 2025</p>
+                        </div>
+                        <div class="schedule-item">
+                            <h3>Final Match</h3>
+                            <p>Boys Final <p>
+                            <p class="winner"> Winner : MLIS 2nd Year </p>
+                            <p>Girls Final</p>
+                                 <p class="winner"> Winner : MLIS 1st Year </p>
+                            <p>Time: 8am-11am</p>
+                            <p>Date: 27 March 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="players-section">
+                    <h2>Players</h2>
+                    <div class="teams-grid">
+                        <!-- Boys Teams -->
+                        <div class="team-card">
+                            <h3>Boys Teams</h3>
+                            <div class="player-table">
+                                <table>
+                                    <tr>
+                                        <th>MLIS 1st Year Team</th>
+                                        <th>MLIS 2nd Year Team</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Himanshu</td>
+                                        <td>Kishan Kumar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harsh (VC)</td>
+                                        <td>Aman Kumar Yadav (C)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arun Kumar Tripathi</td>
+                                        <td>Chanchal Patel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Narayan</td>
+                                        <td>Pappu</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karan</td>
+                                        <td>Kumar Sumit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Krishna (C)</td>
+                                        <td>Mohinish</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vivek</td>
+                                        <td>Ratindra Shah</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shivam</td>
+                                        <td>Ritesh Kumar Upadhyay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adarsh</td>
+                                        <td>Ankit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Akhilesh Tyagi</td>
+                                        <td>Vikas Kumar Maurya (VC)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Satendra</td>
+                                        <td>Vivek Kumar Tiwari</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aman</td>
+                                        <td>Vipin Chauhan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mandeep</td>
+                                        <td>Nikhil Kumar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Md Azad</td>
+                                        <td>Akhand</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Navneet</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anukool Mishra</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rajnish</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Girls Teams -->
+                        <div class="team-card">
+                            <h3>Girls Teams</h3>
+                            <div class="player-table">
+                                <table>
+                                    <tr>
+                                        <th>MLIS 1st Year Team</th>
+                                        <th>MLIS 2nd Year Team</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Diksha</td>
+                                        <td>Riya Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shivani</td>
+                                        <td>Sarita Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Preeti</td>
+                                        <td>Aanchal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chitra</td>
+                                        <td>Kinsi Kumari</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shikha Kumari</td>
+                                        <td>Nikita Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shikha Singh</td>
+                                        <td>Kiran Bharti</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anusha</td>
+                                        <td>Gyan Jyoti</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anjali</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lavina</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rules-section">
+                    <h2>Tournament Rules</h2>
+                    <ul>
+                        <li>Number of Players: 11</li>
+                        <li>All must be regular students/scholars of the Department or SRK Interns.</li>
+                        <li>Overs: 8 (Final Match will be of 10 overs)</li>
+                        <li>Decision of Umpire will be final.</li>
+                        <li>Total of 3 Teams will be playing consisting of 11 players each from 1st Year, 2nd Year and Scholars+Interns.</li>
+                        <li>Captain of each team should ensure that all the players are present at given time.</li>
+                        <li>All Teams are requested to kindly carry Bats with them.</li>
+                        <li>Each innings will start with a new Tennis Ball.</li>
+                        <li>All team will play 2 matches in league stage and top 2 scores will meet in final.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p><center>Organised by:</center></p>
+            <p>Department of Library and Information Science, BHU</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

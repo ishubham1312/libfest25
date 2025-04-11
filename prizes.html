@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prize Distribution - LIBFEST 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .prize-section {
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .prize-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .prize-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .prize-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .prize-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .prize-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .prize-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .prize-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .prize-card .winner {
+            color: #4CAF50;
+            font-weight: 700;
+            margin: 10px 0;
+            padding: 5px 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .prize-card .players {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .prize-card .players ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .prize-card .players li {
+            margin: 5px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .prize-card .players li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .prize-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">LIBFEST<span class="year">'25</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#schedule">Schedule</a>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#memories">Memories</a>
+            <a href="index.html#alumni">Alumni</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="prize-section">
+        <div class="prize-container">
+            <div class="prize-header">
+                <h1>Prize Distribution</h1>
+                <p>Join us for the grand prize distribution ceremony where we celebrate the achievements of our participants</p>
+            </div>
+
+            <div class="prize-grid">
+                <!-- Cricket (Male) -->
+                <div class="prize-card">
+                    <h3>Cricket (Male)</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Aman Kumar Yadav</li>
+                            <li>Vikas Kumar Maurya</li>
+                            <li>Kumar Sumit</li>
+                            <li>Ritesh Upadhyay</li>
+                            <li>Mohinish</li>
+                            <li>Vipin Kumar</li>
+                            <li>Pappu Kumar</li>
+                            <li>Vivek Tiwari</li>
+                            <li>Ratindra Shah</li>
+                            <li>Akhand Pratap</li>
+                            <li>Ankit Kumar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cricket (Female) -->
+                <div class="prize-card">
+                    <h3>Cricket (Female)</h3>
+                    <div class="winner">Winner: MLIS 1st Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Shivani Gupta</li>
+                            <li>Preeti Kumari</li>
+                            <li>Lavina Jangpangi</li>
+                            <li>Chitra Jaiswal</li>
+                            <li>Shikha Singh</li>
+                            <li>Anusha Kumari</li>
+                            <li>Anjali Singh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Volleyball -->
+                <div class="prize-card">
+                    <h3>Volleyball</h3>
+                    <div class="winner">Winner: MLIS 1st Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Anukool Mishra</li>
+                            <li>Himanshu Vishwakarma</li>
+                            <li>Nitish Kumar</li>
+                            <li>Harsh Chaudhary</li>
+                            <li>Shivam Singh</li>
+                            <li>Utkarsh Tripathi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quiz -->
+                <div class="prize-card">
+                    <h3>Quiz</h3>
+                    <div class="winner">Winner: Team D</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Riya Singh</li>
+                            <li>Lavina Jangpangi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tug of War (Boys) -->
+                <div class="prize-card">
+                    <h3>Tug of War (Boys)</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Vikas Kumar Maurya</li>
+                            <li>Vivek Tiwari</li>
+                            <li>Saurabh Singh Yadav</li>
+                            <li>Kumar Sumit</li>
+                            <li>Mohinish</li>
+                            <li>Nikhil Kumar</li>
+                            <li>Pappu Kumar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tug of War (Girls) -->
+                <div class="prize-card">
+                    <h3>Tug of War (Girls)</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Riya Singh</li>
+                            <li>Monalisa</li>
+                            <li>Sarita Singh</li>
+                            <li>Kinsi Kumari</li>
+                            <li>Aanchal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Treasure Hunt -->
+                <div class="prize-card">
+                    <h3>Treasure Hunt</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Aman Kumar Yadav</li>
+                            <li>Mohinish</li>
+                            <li>Piyush Tripathi</li>
+                            <li>Sarita Singh</li>
+                            <li>Vikas Kumar Maurya</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Badminton (Boys) - Singles -->
+                <div class="prize-card">
+                    <h3>Badminton (Boys) - Singles</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Player:</h4>
+                        <ul>
+                            <li>Nikhil Kumar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Badminton (Boys) - Doubles -->
+                <div class="prize-card">
+                    <h3>Badminton (Boys) - Doubles</h3>
+                    <div class="winner">Winner: MLIS 1st Year</div>
+                    <div class="players">
+                        <h4>Players:</h4>
+                        <ul>
+                            <li>Satendra Kumar Verma</li>
+                            <li>Shivam Singh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Badminton (Girls) -->
+                <div class="prize-card">
+                    <h3>Badminton (Girls)</h3>
+                    <div class="winner">Winner: MLIS 1st Year</div>
+                    <div class="players">
+                        <h4>Player:</h4>
+                        <ul>
+                            <li>Chitra Jaiswal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chess (Girls) -->
+                <div class="prize-card">
+                    <h3>Chess (Girls)</h3>
+                    <div class="winner">Winner: MLIS 2nd Year</div>
+                    <div class="players">
+                        <h4>Player:</h4>
+                        <ul>
+                            <li>Sarita Singh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chess (Boys) -->
+                <div class="prize-card">
+                    <h3>Chess (Boys)</h3>
+                    <div class="winner">Winner: MLIS 1st Year</div>
+                    <div class="players">
+                        <h4>Player:</h4>
+                        <ul>
+                            <li>Aditya Bhattacharya</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p><center>Organised by:</center></p>
+            <p>Department of Library and Information Science, BHU</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
