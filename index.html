@@ -1,592 +1,694 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIBFEST 25 - Sports Day</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>LIBFEST'25 - Modern Sports Festival</title>
+    <meta name="description" content="Experience the excitement of LibFest '25! Join us for a vibrant celebration of sports, friendship, and unforgettable moments at BHU.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    <style>
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
-
-        .mySlides, .mySlides25 {
-            display: none;
-        }
-
-        .mySlides.fade, .mySlides25.fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        .mySlides.fade-manual, .mySlides25.fade-manual {
-            -webkit-animation-name: fade-manual;
-            -webkit-animation-duration: 0.5s;
-            animation-name: fade-manual;
-            animation-duration: 0.5s;
-        }
-
-        @-webkit-keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-
-        @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-
-        @-webkit-keyframes fade-manual {
-            from {opacity: 0}
-            to {opacity: 1}
-        }
-
-        @keyframes fade-manual {
-            from {opacity: 0}
-            to {opacity: 1}
-        }
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #1a237e;
-        }
-
-        .logo-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .schedule-item {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-        }
-
-        .schedule-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .schedule-item a {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
-
-        .schedule-item a:hover {
-            color: inherit;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="/src/main.js"></script>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html" class="logo-link">LIBFEST<span class="year">'25</span></a>
-        </div>
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#games">Games</a>
-            <a href="#memories">Memories</a>
-            <a href="#alumni">Alumni</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+    <!-- Particle Background -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" x-data="{ isOpen: false, scrolled: false }" 
+         x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+         :class="scrolled ? 'bg-white/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center space-x-2 group">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                            <div class="relative bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-4 py-2 rounded-lg">
+                                <span class="font-display font-black text-xl lg:text-2xl">LIBFEST</span>
+                                <span class="text-gold-400 font-bold">'25</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Home</a>
+                        <a href="#schedule" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Schedule</a>
+                        <a href="#games" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Games</a>
+                        <a href="#memories" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Memories</a>
+                        <a href="alumni.html" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Alumni</a>
+                        <a href="#contact" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary-50" :class="scrolled ? 'text-gray-900' : 'text-white'">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button @click="isOpen = !isOpen" class="inline-flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-300" :class="scrolled ? 'text-gray-900' : 'text-white'">
+                        <svg class="h-6 w-6" :class="{ 'hidden': isOpen, 'block': !isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="h-6 w-6" :class="{ 'block': isOpen, 'hidden': !isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div x-show="isOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="lg:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-lg rounded-lg mt-2 shadow-lg">
+                    <a href="#home" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Home</a>
+                    <a href="#schedule" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Schedule</a>
+                    <a href="#games" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Games</a>
+                    <a href="#memories" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Memories</a>
+                    <a href="alumni.html" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Alumni</a>
+                    <a href="#contact" @click="isOpen = false" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>
-                <span class="welcome-text">Welcome <br> to </span>
-                <span class="libfest-text">LIBFEST <span class="year">'25</span></span>
-            </h1>
-            <p>Get ready to experience the excitement of LibFest '25! Join us for a vibrant celebration of sports, friendship, and unforgettable moments at the Department of Library and Information Science, BHU. Let the games begin and the memories last forever!<p>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-[url('images/bg.png')] bg-cover bg-center opacity-30"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-accent-500/20 to-gold-500/20 rounded-full blur-3xl animate-blob"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-secondary-500/20 to-primary-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-gold-500/10 to-accent-500/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
         </div>
-    </section>
 
-    <section id="schedule" class="schedule-section">
-        <h2>Event Schedule</h2>
-        <div class="schedule-container">
-            <div class="schedule-item">
-                <a href="day1.html">
-                    <h3>Day 1</h3>
-                    <p>March 26, 2025</p>
-                </a>
-            </div>
-            <div class="schedule-item">
-                <a href="day2.html">
-                    <h3>Day 2</h3>
-                    <p>March 27, 2025</p>
-                </a>
-            </div>
-            <div class="schedule-item">
-                <a href="day3.html">
-                    <h3>Day 3</h3>
-                    <p>March 28, 2025</p>
-                </a>
-            </div>
-            <div class="schedule-item">
-                <a href="day4.html">
-                    <h3>Day 4</h3>
-                    <p>March 29, 2025</p>
-                </a>
-            </div>
-            <div class="schedule-item">
-                <a href="prizes.html">
-                    <h3>Prize Distribution</h3>
-                    <p>April 3, 2025</p>
-                </a>
-            </div>
-        </div>
-    </section>
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="space-y-8" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Welcome Text -->
+                <div class="space-y-4">
+                    <h2 class="font-script text-4xl sm:text-5xl lg:text-6xl text-gold-400 animate-fade-in-down">
+                        Welcome to
+                    </h2>
+                    
+                    <!-- Main Title with Glitch Effect -->
+                    <h1 class="font-display font-black text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-white text-shadow-lg">
+                        <span class="inline-block animate-fade-in-up">LIBFEST</span>
+                        <span class="text-gold-400 inline-block animate-fade-in-up animation-delay-300">'25</span>
+                    </h1>
+                </div>
 
-    <div class="section-separator"></div>
+                <!-- Description -->
+                <p class="text-xl sm:text-2xl lg:text-3xl text-gray-200 max-w-4xl mx-auto leading-relaxed animate-fade-in-up animation-delay-600">
+                    Get ready to experience the excitement of LibFest '25! Join us for a vibrant celebration of 
+                    <span class="text-gold-400 font-semibold">sports</span>, 
+                    <span class="text-accent-400 font-semibold">friendship</span>, and 
+                    <span class="text-secondary-400 font-semibold">unforgettable moments</span> 
+                    at the Department of Library and Information Science, BHU.
+                </p>
 
-    <section id="memories25" class="memories-section">
-        <h2>LIBFEST'25 Memories</h2>
-        <div class="slideshow-container">
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/2.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/3.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/4.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/5.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/6.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/7.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/8.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/9.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/10.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/11.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/12.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/13.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/14.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/15.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/16.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/17.JPG" style="width:100%">
-            </div>
-            <div class="mySlides25 fade">
-                <img src="images/memory 25/18.JPG" style="width:100%">
-            </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-900">
+                    <a href="#games" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-secondary-600 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="relative flex items-center">
+                            <i class="fas fa-gamepad mr-2"></i>
+                            Explore Games
+                        </span>
+                    </a>
+                    
+                    <a href="#schedule" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:bg-white">
+                        <span class="flex items-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            View Schedule
+                        </span>
+                    </a>
+                </div>
 
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides25(-1)">❮</a>
-            <a class="next" onclick="plusSlides25(1)">❯</a>
-
-            <!-- Dots -->
-            <div style="text-align:center; margin-top: 20px;">
-                <span class="dot" onclick="currentSlide25(1)"></span>
-                <span class="dot" onclick="currentSlide25(2)"></span>
-                <span class="dot" onclick="currentSlide25(3)"></span>
-                <span class="dot" onclick="currentSlide25(4)"></span>
-                <span class="dot" onclick="currentSlide25(5)"></span>
-                <span class="dot" onclick="currentSlide25(6)"></span>
-                <span class="dot" onclick="currentSlide25(7)"></span>
-                <span class="dot" onclick="currentSlide25(8)"></span>
-                <span class="dot" onclick="currentSlide25(9)"></span>
-                <span class="dot" onclick="currentSlide25(10)"></span>
-                <span class="dot" onclick="currentSlide25(11)"></span>
-                <span class="dot" onclick="currentSlide25(12)"></span>
-                <span class="dot" onclick="currentSlide25(13)"></span>
-                <span class="dot" onclick="currentSlide25(14)"></span>
-                <span class="dot" onclick="currentSlide25(15)"></span>
-            </div>
-        </div>
-    </section>
-    <section id="past-memories" class="past-memories-section">
-        <h2>See More of LIBFEST<span class="year-24">'25</span></h2>
-        <div class="memory-buttons">
-            <a href="https://drive.google.com/drive/folders/1Amg7kmqdOeWLHsbuWoEUbmPOYmb4cwCu" target="_blank" class="memory-btn">Click Here</a>
-        </div>
-    </section>
-    <div class="section-separator"></div>
-
-    <section id="games" class="sports-section">
-        <h2>Featured Sports</h2>
-        <div class="sports-grid">
-            <div class="sport-card">
-                <a href="cricket.html">
-                    <img src="images/cricket.png" alt="Cricket">
-                    <h3>Cricket</h3>
-                    <p>Show your batting and bowling skills in this exciting tournament.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="badminton.html">
-                    <img src="images/badminton.png" alt="Badminton">
-                    <h3>Badminton</h3>
-                    <p>Display your agility and precision in singles and doubles matches.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="chess.html">
-                    <img src="images/chess.png" alt="Chess">
-                    <h3>Chess</h3>
-                    <p>Challenge your mind in strategic battles on the chessboard.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="tugofwar.html">
-                    <img src="images/tug.png" alt="Tug of War">
-                    <h3>Tug of War</h3>
-                    <p>Team up and test your strength in this classic competition.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="volleyball.html">
-                    <img src="images/volley.jpg" alt="Volleyball">
-                    <h3>Volleyball</h3>
-                    <p>Show your spiking and blocking skills in this dynamic team sport.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="treasurehunt.html">
-                    <img src="images/tresure.jpg" alt="Treasure Hunt">
-                    <h3>Treasure Hunt</h3>
-                    <p>Embark on an exciting adventure to find hidden treasures across campus.</p>
-                </a>
-            </div>
-            <div class="sport-card">
-                <a href="quiz.html">
-                    <img src="images/Quiz.png" alt="Quiz">
-                    <h3>Quiz</h3>
-                    <p>Test your knowledge and compete in an engaging quiz competition.</p>
-                </a>
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                        <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="section-separator"></div>
+    <!-- Schedule Section -->
+    <section id="schedule" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Event Schedule
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Four days of non-stop action, competition, and celebration
+                </p>
+            </div>
 
-    <section id="memories" class="memories-section">
-        <h2>Previous Memories</h2>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="images/memory/2.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/3.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/4.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/5.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/6.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/7.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/8.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/9.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/10.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/11.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/12.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/13.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/14.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/15.JPG" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="images/memory/16.JPG" style="width:100%">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Day 1 -->
+                <div class="card-modern p-8 group hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-calendar-day text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Day 1</h3>
+                        <p class="text-primary-600 font-semibold mb-4">March 26, 2025</p>
+                        <p class="text-gray-600 mb-6">Cricket Tournament Begins</p>
+                        <a href="day1.html" class="btn-primary inline-block">
+                            View Details
+                        </a>
+                    </div>
+                </div>
 
-            <div style="text-align:center; margin-top: 20px;">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
-                <span class="dot" onclick="currentSlide(7)"></span>
-                <span class="dot" onclick="currentSlide(8)"></span>
-                <span class="dot" onclick="currentSlide(9)"></span>
-                <span class="dot" onclick="currentSlide(10)"></span>
-                <span class="dot" onclick="currentSlide(11)"></span>
-                <span class="dot" onclick="currentSlide(12)"></span>
-                <span class="dot" onclick="currentSlide(13)"></span>
-                <span class="dot" onclick="currentSlide(14)"></span>
-                <span class="dot" onclick="currentSlide(15)"></span>
+                <!-- Day 2 -->
+                <div class="card-modern p-8 group hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-trophy text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Day 2</h3>
+                        <p class="text-secondary-600 font-semibold mb-4">March 27, 2025</p>
+                        <p class="text-gray-600 mb-6">Finals & Team Sports</p>
+                        <a href="day2.html" class="btn-secondary inline-block">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="card-modern p-8 group hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chess text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Day 3</h3>
+                        <p class="text-accent-600 font-semibold mb-4">March 28, 2025</p>
+                        <p class="text-gray-600 mb-6">Mind Sports Day</p>
+                        <a href="day3.html" class="btn-primary inline-block">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="card-modern p-8 group hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-500 to-primary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Day 4</h3>
+                        <p class="text-gold-600 font-semibold mb-4">March 29, 2025</p>
+                        <p class="text-gray-600 mb-6">Quiz & Adventure</p>
+                        <a href="day4.html" class="btn-secondary inline-block">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Prize Distribution -->
+                <div class="card-modern p-8 group hover:scale-105 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-medal text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Prize Distribution</h3>
+                        <p class="text-gold-600 font-semibold mb-4">April 3, 2025</p>
+                        <p class="text-gray-600 mb-6">Celebration & Awards</p>
+                        <a href="prizes.html" class="btn-primary inline-block">
+                            View Winners
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section> 
-
-    <div class="section-separator"></div>
-    
-
-    <section id="past-memories" class="past-memories-section">
-        <h2>For all Memories of LIBFEST<span class="year-24">'24</span></h2>
-        <div class="memory-buttons">
-            <a href="https://drive.google.com/drive/folders/1bVBBNbJwYnj_FHtRxbunWYsKSALF_uDp?usp=drive_link" target="_blank" class="memory-btn">Day 1</a>
-            <a href="https://drive.google.com/drive/folders/1SB9jxILhGT2AYBiFE8yWy0CJMMrriW8j?usp=drive_link" target="_blank" class="memory-btn">Day 2</a>
-            <a href="https://drive.google.com/drive/folders/1cq5TQ_JuPZ_CpemWOjMIw6-R9_g-EMT7?usp=drive_link" target="_blank" class="memory-btn">Day 3</a>
-            <a href="https://drive.google.com/drive/folders/1Phbd44j8XG0YdApTSUWBxNfVIRyJK0TP?usp=drive_link" target="_blank" class="memory-btn">Day 4</a>
-            <a href="https://drive.google.com/drive/folders/1AwMrqy_aGObfaZ7e-gGXCvGVmhfeyczB" target="_blank" class="memory-btn">Extras</a>
-            <a href="https://drive.google.com/drive/folders/1k-hI0CroclARxzGs_KoZt_9OokYNFytM?usp=sharing" target="_blank" class="memory-btn">Libfest'18</a>
-        </div>
-    </section>
-
-    <section id="video" class="video-section">
-        <h2>Event Highlights</h2>
-        <div class="youtube-embed">
-            <iframe src="https://www.youtube.com/embed/Wpz38ayFOVM" 
-                    title="LIBFEST 25 Memories" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
         </div>
     </section>
 
-    <div class="section-separator"></div>
+    <!-- LIBFEST'25 Memories Section -->
+    <section id="memories25" class="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    LIBFEST'25 Memories
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Relive the magical moments from this year's celebration
+                </p>
+            </div>
 
-    <section id="alumni" class="alumni-section">
-        <div class="alumni-content">
-            <h2>Meet the Organisers</h2>
-            <a href="org.html" class="alumni-btn">Click Here</a>
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper memories-25-slider rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/2.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/3.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/4.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/5.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/6.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/7.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/8.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/9.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/10.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/11.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/12.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/13.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/14.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/15.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/16.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/17.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory 25/18.JPG" alt="LIBFEST'25 Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <!-- More Memories Button -->
+                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://drive.google.com/drive/folders/1Amg7kmqdOeWLHsbuWoEUbmPOYmb4cwCu" target="_blank" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-gold-500 to-accent-500 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-accent-500 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="relative flex items-center">
+                            <i class="fas fa-images mr-2"></i>
+                            See More LIBFEST'25 Memories
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="section-separator"></div>
+    <!-- Games Section -->
+    <section id="games" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Featured Sports
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Compete in exciting tournaments and showcase your skills
+                </p>
+            </div>
 
-    <section id="alumni" class="alumni-section">
-        <div class="alumni-content">
-            <h2>Get to know our Alumni Supporters</h2>
-            <a href="alumni.html" class="alumni-btn">Click Here</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Cricket -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden">
+                        <img src="images/cricket.png" alt="Cricket" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Cricket</h3>
+                        <p class="text-gray-600 mb-4">Show your batting and bowling skills in this exciting tournament.</p>
+                        <a href="cricket.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Badminton -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden">
+                        <img src="images/badminton.png" alt="Badminton" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Badminton</h3>
+                        <p class="text-gray-600 mb-4">Display your agility and precision in singles and doubles matches.</p>
+                        <a href="badminton.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chess -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden">
+                        <img src="images/chess.png" alt="Chess" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Chess</h3>
+                        <p class="text-gray-600 mb-4">Challenge your mind in strategic battles on the chessboard.</p>
+                        <a href="chess.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tug of War -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden">
+                        <img src="images/tug.png" alt="Tug of War" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Tug of War</h3>
+                        <p class="text-gray-600 mb-4">Team up and test your strength in this classic competition.</p>
+                        <a href="tugofwar.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Volleyball -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden">
+                        <img src="images/volley.jpg" alt="Volleyball" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Volleyball</h3>
+                        <p class="text-gray-600 mb-4">Show your spiking and blocking skills in this dynamic team sport.</p>
+                        <a href="volleyball.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Treasure Hunt -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative overflow-hidden">
+                        <img src="images/tresure.jpg" alt="Treasure Hunt" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Treasure Hunt</h3>
+                        <p class="text-gray-600 mb-4">Embark on an exciting adventure to find hidden treasures across campus.</p>
+                        <a href="treasurehunt.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quiz -->
+                <div class="card-modern group overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+                    <div class="relative overflow-hidden">
+                        <img src="images/Quiz.png" alt="Quiz" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">Quiz</h3>
+                        <p class="text-gray-600 mb-4">Test your knowledge and compete in an engaging quiz competition.</p>
+                        <a href="quiz.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="section-separator"></div>
+    <!-- Previous Memories Section -->
+    <section id="memories" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Previous Memories
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Cherished moments from past celebrations
+                </p>
+            </div>
 
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-buttons">
-            <a href="https://wa.me/919807849501" class="contact-button whatsapp-button">
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp
-            </a>
-            <a href="mailto:dlislibfest@gmail.com?subject=LIBFEST%2025%20Enquiry" class="contact-button email-button">
-                <i class="far fa-envelope"></i>
-                Email
-            </a>
-            <a href="https://www.instagram.com/dlis_bhu_fest/" class="contact-button instagram-button" target="_blank">
-                <i class="fab fa-instagram"></i>
-                Instagram
-            </a>
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper memories-slider rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/memory/2.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/3.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/4.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/5.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/6.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/7.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/8.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/9.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/10.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/11.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/12.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/13.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/14.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/15.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/memory/16.JPG" alt="Previous Memory" class="w-full h-96 lg:h-[500px] object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <!-- Memory Archive Buttons -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://drive.google.com/drive/folders/1bVBBNbJwYnj_FHtRxbunWYsKSALF_uDp?usp=drive_link" target="_blank" class="btn-primary text-center">Day 1</a>
+                    <a href="https://drive.google.com/drive/folders/1SB9jxILhGT2AYBiFE8yWy0CJMMrriW8j?usp=drive_link" target="_blank" class="btn-primary text-center">Day 2</a>
+                    <a href="https://drive.google.com/drive/folders/1cq5TQ_JuPZ_CpemWOjMIw6-R9_g-EMT7?usp=drive_link" target="_blank" class="btn-primary text-center">Day 3</a>
+                    <a href="https://drive.google.com/drive/folders/1Phbd44j8XG0YdApTSUWBxNfVIRyJK0TP?usp=drive_link" target="_blank" class="btn-primary text-center">Day 4</a>
+                    <a href="https://drive.google.com/drive/folders/1AwMrqy_aGObfaZ7e-gGXCvGVmhfeyczB" target="_blank" class="btn-secondary text-center">Extras</a>
+                    <a href="https://drive.google.com/drive/folders/1k-hI0CroclARxzGs_KoZt_9OokYNFytM?usp=sharing" target="_blank" class="btn-secondary text-center">LIBFEST'18</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p><center> Organised by:</center></p> <br>Department of Library and Information Science, BHU</p>
+    <!-- Video Section -->
+    <section class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Event Highlights
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Watch the best moments from LIBFEST'25
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                    <div class="bg-black rounded-xl overflow-hidden">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe 
+                                src="https://www.youtube.com/embed/Wpz38ayFOVM" 
+                                title="LIBFEST 25 Memories" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="absolute top-0 left-0 w-full h-full">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section class="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Meet the Organisers
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The amazing team behind LIBFEST'25
+                </p>
+            </div>
+
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="org.html" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                    <span class="absolute inset-0 bg-gradient-to-r from-secondary-600 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span class="relative flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        Meet the Team
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="alumni" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
+                    Our Alumni Supporters
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Celebrating the achievements of our distinguished graduates
+                </p>
+            </div>
+
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="alumni.html" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-accent-500 to-gold-500 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                    <span class="absolute inset-0 bg-gradient-to-r from-gold-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span class="relative flex items-center">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        View Alumni
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gradient-to-br from-gray-900 to-primary-900 text-white">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Get in Touch
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Have questions? We'd love to hear from you
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919807849501" class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold">WhatsApp</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:dlislibfest@gmail.com?subject=LIBFEST%2025%20Enquiry" class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="far fa-envelope text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold">Email</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/dlis_bhu_fest/" target="_blank" class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fab fa-instagram text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold">Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container-custom">
+            <div class="text-center">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-display font-bold mb-2">Organised by</h3>
+                    <p class="text-lg text-gray-300">Department of Library and Information Science, BHU</p>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-400">
+                        © 2025 LIBFEST. All rights reserved. Made with ❤️ for the DLIS community.
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        // Previous Memories slider
-        var slideIndex = 1;
-        var autoSlideInterval;
-        var isManual = false;
-
-        showSlides(slideIndex);
-
-        // Start auto-sliding
-        autoSlideInterval = setInterval(function() {
-            plusSlides(1);
-        }, 3000);
-
-        function plusSlides(n) {
-            if (n !== 0) {
-                isManual = true;
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = setInterval(function() {
-                    plusSlides(1);
-                }, 3000);
-            }
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            isManual = true;
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(function() {
-                plusSlides(1);
-            }, 3000);
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slides[slideIndex-1].style.display = "block";
-            if (isManual) {
-                slides[slideIndex-1].classList.remove('fade');
-                slides[slideIndex-1].classList.add('fade-manual');
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.add('opacity-100');
             } else {
-                slides[slideIndex-1].classList.remove('fade-manual');
-                slides[slideIndex-1].classList.add('fade');
+                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.remove('opacity-100');
             }
-            dots[slideIndex-1].className += " active";
-        }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-        // LIBFEST'25 Memories slider
-        var slideIndex25 = 1;
-        var autoSlideInterval25;
-        var isManual25 = false;
-
-        showSlides25(slideIndex25);
-
-        // Start auto-sliding
-        autoSlideInterval25 = setInterval(function() {
-            plusSlides25(1);
-        }, 3000);
-
-        function plusSlides25(n) {
-            if (n !== 0) {
-                isManual25 = true;
-                clearInterval(autoSlideInterval25);
-                autoSlideInterval25 = setInterval(function() {
-                    plusSlides25(1);
-                }, 3000);
-            }
-            showSlides25(slideIndex25 += n);
-        }
-
-        function currentSlide25(n) {
-            isManual25 = true;
-            clearInterval(autoSlideInterval25);
-            autoSlideInterval25 = setInterval(function() {
-                plusSlides25(1);
-            }, 3000);
-            showSlides25(slideIndex25 = n);
-        }
-
-        function showSlides25(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides25");
-            var dots = document.getElementsByClassName("dot");
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
             
-            if (n > slides.length) {slideIndex25 = 1}
-            if (n < 1) {slideIndex25 = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = `hsl(${Math.random() * 60 + 200}, 70%, 60%)`;
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
             }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slides[slideIndex25-1].style.display = "block";
-            if (isManual25) {
-                slides[slideIndex25-1].classList.remove('fade');
-                slides[slideIndex25-1].classList.add('fade-manual');
-            } else {
-                slides[slideIndex25-1].classList.remove('fade-manual');
-                slides[slideIndex25-1].classList.add('fade');
-            }
-            dots[slideIndex25-1].className += " active";
         }
+        
+        createParticles();
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
